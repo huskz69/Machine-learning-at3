@@ -13,6 +13,13 @@ df_clean = df_clean [
     df_clean['Physics'].between(0,100) &
     df_clean['Software_Engineering_Final'].between(0,100)
 ]
-print(df_clean)
 
+X1, y = df_clean[['Maths_Advanced']], df_clean['Software_Engineering_Final']
+X1_train, X1_test, y_train, y_test = train_test_split(X1, y, test_size=0.2, random_state=69)
+model = LinearRegression()
+model.fit(X1_train, y_train)
+prediction = model.predict(X1_test)
+
+mse = mean_squared_error(y_test, prediction)
+print(f"Root Mean Squared Error (RMSE): {mse:.2f}")
 

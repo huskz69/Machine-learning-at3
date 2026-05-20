@@ -35,7 +35,7 @@ print(f"Weight: {weight}")
 print(f"Bias: {bias}")
 
 plt.scatter(X1_test,y_test, color='blue')
-
+ 
 plt.xlabel('X1 Test Data')
 plt.ylabel('Y Test Data')
 plt.title('X1_test vs y_test')
